@@ -22,3 +22,24 @@ fungsi app.use() dan app.method()
 dimana method adalah method HTTP dari permintaan yang ditangani oleh fungsi middleware
 (seperti GET, PUT, atau POST) dalam huruf kecil
 
+Middleware tinggat router
+middleware ini bekerja sama dengan objek router yang merupakan
+instance dari express.Router()
+Router dapat dianggap sebagai mini aplikasi yang hanya menangani middleware dan router
+Router dapat dikaitkan dengan path tertentu dengan menggunakan app.use()
+atau juga dapat ditangani sebagaai argumen callback
+
+
+Middleware penanganan kesalahan
+
+Middleware ini memiliki argumen err, req, resn next
+middleware ini dapat menangkap kesalahan yang terjadi di aplikasi dan mengirimkan response yang sesuai
+
+Middleware bawaan
+express JS menyediakan beberapa middleware bawaan yang dapat
+digunakan tanpa perlu menginstal modul tambahan
+
+
+Middleware pihak ketiga
+express JS mendukung penggunaan middleware dari modul pihak ketiga
+yang dapat diinstal dengan npm atau yarn
