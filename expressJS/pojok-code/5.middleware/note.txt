@@ -1,0 +1,24 @@
+Apa itu express JS Middleware
+
+Express JS middleware adalah fungsi yang memiliki akses ke objek permintaan(req),
+objek response(res) dan fungsi next dalam siklus permintaan-response aplikasi
+
+fungsi middleware dapat melakukan tugas-tugas berikut:
+1. menjalankan kode apapun
+2. membuat perubahan pada objek permintaan dan response
+3. mengakhiri siklus permintaan-response
+4. memanggil middleware berikutnya dalam tumpukan
+
+jika fungsi middleware saat ini tidak mengakhiri siklus permintaan-response,
+ia harus memanggil next() untuk memberikan kontrol ke middleware berikutnya
+jika tidak permintaan akan hanging
+
+
+
+Middleware tingkat aplikasi:
+
+middleware diikat ke sebuah instance dari objek app dengan menggunakan
+fungsi app.use() dan app.method()
+dimana method adalah method HTTP dari permintaan yang ditangani oleh fungsi middleware
+(seperti GET, PUT, atau POST) dalam huruf kecil
+

@@ -1,0 +1,2 @@
+static file adalah file yang tidak berubah - ubah dan dapat diakses oleh klien
+sepeti gambar, file csss, file javascript atau file HTML
