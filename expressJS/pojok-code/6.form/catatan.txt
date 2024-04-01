@@ -1,0 +1,8 @@
+Apa Itu Form Data
+
+Form data adalah cara untuk mengirimkan data dari client ke server melalui form HTML.
+Form data biasanya menggunakan format multipark/form-data
+yang memungkinkan pengiriman data teks dan file secara bersamaan.
+express js adalah framework web untuk NodeJS yang memudahkan pengembangan aplikasi web dengan javascript.
+untuk megelolah form data di Express js kita membutuhkan middleware
+yang dapat mem-parsing data tersebut dan menyimpannya dalam objek req.body

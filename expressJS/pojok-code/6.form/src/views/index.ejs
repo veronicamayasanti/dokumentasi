@@ -1,0 +1,28 @@
+<h1>Daftar Barang EJS FILE</h1>
+<table border="1" cellpadding="3" cellspacing="0">
+  <tr>
+    <th>No</th>
+    <th>Kode</th>
+    <th>Nama</th>
+  </tr>
+  <% data.forEach((row, no)=>{ %>
+  <tr>
+    <td><%= no +1 %></td>
+    <td><%= row.id %></td>
+    <td><%= row.nama %></td>
+  </tr>
+  <%}) %>
+</table>
+
+<div>
+  <h2>card</h2>
+  <dic class="card">
+    <img src="/img/img_avatar.png" alt="" style="width: 50%;">
+    <div class="container">
+      <h3>belajar static express.js</h3>
+      <h4 ><b> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt, modi.</b></h4>
+    </div>
+  </dic>
+</div>
+
+<button onclick="show()">tombol</button>
