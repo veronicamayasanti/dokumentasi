@@ -1,0 +1,9 @@
+Apa itu express js session
+
+express js session adalah middleware di express js yang memungkinkan
+membuat sesi di aplikasi web 
+sesi adalah cara untuk menyimpan data spesifik pengguna di server
+sehingga dapat mengidentifikasikan dan melacak ativitas pengguna di berbagai permintaan
+sesi biasanya di simpan dalam cookie yang merupakan file kecil
+yang dikirim ke browser pengguna dan berisi ID sesi
+ID sesi kemudian digunakan untuk mengambil data sesi dari server
