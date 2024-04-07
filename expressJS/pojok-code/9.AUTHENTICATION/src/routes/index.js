@@ -64,10 +64,65 @@ routes.get("/protected-page", isLoggedIn, (req, res, next) =>{
     const data = {
         title: "protected-page",
         layout: "layout/main-layout",
-        message: "welcome "+req.session.user.nama,
+        message: "welcome " + req.session.user.nama,
     };
     res.render("protected-page", data);
 });
+
+
+
+
+
+routes.get("/login", (req, res) => {
+    const data = {
+        title: "Login",
+        layout: "layout/main-layout",
+        message: ""
+    };
+    res.render("login", data);
+})
+
+routes.post("/login", (req, res) => {
+    if (!req.body.email || !req.body.password) {
+        res.status(400);
+        const data = {
+            title: "Login",
+            layout: "layout/main-layout",
+            message: "Invalid data",
+        };
+        res.render("login", data);
+    } else {
+        if (Users.length === 0) {
+            res.redirect("/signup");
+        } else {
+            Users.filter((user) => {
+                if (
+                    user.email === req.body.email &&
+                    user.password === req.body.password
+                ) {
+                    req.session.user = user;
+                    res.redirect("/protected-page");
+                } else {
+                    res.status(400);
+                    const data = {
+                        title: "Login",
+                        layout: "layout/main-layout",
+                        message: "Invalid data",
+                    };
+                    res.render("login", data);
+                }
+            });
+        }
+    }
+});
+
+
+
+
+routes.get("/logout", (req, res) => {
+    req.session.destroy();
+    res.redirect("/login");
+})
 
 
 routes.use("/protected-page", (err, req, res, next) => {
@@ -78,15 +133,5 @@ routes.use("/protected-page", (err, req, res, next) => {
     };
     res.render("login", data);
 });
-
-
-routes.get("/login", (req,res) => {
-    const data = {
-        title: "Login",
-        layout: "layout/main-layout",
-        message: ""
-    };
-    res.render("login", data);
-})
 
 export default routes;
